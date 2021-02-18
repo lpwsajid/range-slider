@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="second.css">
+  </head>
+  <body>
+    <div class="range">
+       <div class="sliderValue">
+          <span>50</span>
+     	</div>
+<div class="field">
+    <div class="value left">0</div>
+<input type="range" min="5" max="100" value="50" steps="0">
+    <div class="value right">100</div>
+</div>
+</div>
+<script>
+      const slideValue = document.querySelector("span");
+      const inputSlider = document.querySelector("input");
+      inputSlider.oninput = (()=>{
+        let value = inputSlider.value;
+        slideValue.textContent = value;
+        slideValue.style.left = (value) + "%";
+        slideValue.classList.add("show");
+      });
+      inputSlider.onblur = (()=>{
+        slideValue.classList.remove("show");
+      });
+    </script>
+
+  </body>
+</html>
+
